@@ -39,7 +39,7 @@ In short, source distribution (or `sdist`) is the source code of the module. It 
 
 4. Download the modules. Pip comes with a `download` subcommand which we will leverage. Consider the following command:
    ```sh
-   <your-python-interpreter> -m pip download -r requirements.txt -d deps --platform win32 --only-binary=:all:
+   <your-python-interpreter> -m pip download -r requirements.txt -d deps --python-version 3.8 --platform win32 --only-binary=:all:
 
    # Collecting smbprotocol==1.10.1pycparser
    #   Downloading smbprotocol-1.10.1-py3-none-any.whl (125 kB)
@@ -67,7 +67,8 @@ In short, source distribution (or `sdist`) is the source code of the module. It 
 
    - `-r requirements.txt` tells pip to download modules specified in the `requirements.txt` file
    - `-d deps` specifies the destination folder called `deps`
-   - `--platform win32` chooses the `win32` platform
+   - `--python-version 3.8` specifies the target Python version
+   - `--platform win32` specifies the `win32` platform
    - `--only-binary=:all:` tells pip to only download wheels. In case wheel is not present, Pip will try to download and compile an `sdist` to a wheel.
 
    Since we specified the platform, Pip forces us to use the `--only-binary=:all:` flag as source distributions are not tied to a platform. In case we only want to download the source distributions, use the `--no-binary=:all:` flag:
@@ -108,4 +109,6 @@ In short, source distribution (or `sdist`) is the source code of the module. It 
    # Successfully downloaded smbprotocol cryptography pyspnego cffi pycparser
    ```
 
-   Note that a lot of additional steps have to be performed in order to fully prepare the source distibutions. You will likely need to install development packages as well. 
+   Note that:
+   - `--python-version` and `--platform` flags have been omitted as they are not relevant
+   - A lot of additional steps have to be performed in order to fully prepare the source distibutions. You will likely need to install additional development packages as well. 
