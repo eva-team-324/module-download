@@ -27,7 +27,7 @@ Run the following command on the destination machine in order to determine its p
 
 ## Source distribution vs Wheel
 
-In short, source distribution (or `sdist`) is the source code of the module. It comes in a `.tar.gz` file and is not dependent on any specific platform or Python version. Wheel, on the other hand, is a source distribution which has been precompiled for specific platform and Python version. Wheel comes in a `.whl` file (which is actually a regular `.zip` file), is lighter in terms of weight and does not need to be built or compiled. All modules which come in `sdist` format will have to be compiled before they can be installed. Therefore, if your destination platform is known beforehand, it's much simpler to just download the wheel and be done with it.
+In short, source distribution (or `sdist`) is the source code of the module. It comes in a `.tar.gz` file and is not dependent on any specific platform or Python version. Wheel, on the other hand, is a source distribution which has been precompiled for specific platform and Python version. Wheel comes in a `.whl` file (which is actually a regular `.zip` file), is lighter in terms of weight and does not need to be built or compiled. All modules which come in `sdist` format will have to be compiled to wheels before they can be installed. Therefore, if your destination platform is known beforehand, it's much simpler to just download the wheel and be done with it.
 
 # Procedure
 
